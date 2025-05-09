@@ -1,1 +1,1 @@
-# Python_basics_WORKSHOP
+# Python_basics_WORKSHOP_NGS1
