@@ -1,23 +1,33 @@
 from random import randint
 
-draw_number = randint(1, 100)
-guess_number = 0
+def guess_number():
+    """Get number from user.
 
-while draw_number > 0:
-    try:
-        guess_number = int(input("Guess a number: "))
+    User guessing a number until he guess right
 
-    except ValueError:
-        print("It's not a number!")
+    :guess_n: int number handled, if user gives a wrong type (no int number)
+    """
+    random_number = randint(1, 100)
+    guess = 0
+    while True:
+        while True:
+            try:
+                guess_n = int(input("Guess a number: "))
+                guess = guess_n
+                break
+            except ValueError:
+                print("It's not a number")
 
-    if guess_number == draw_number:
-        print("You win!")
-        break
+        if guess == random_number:
+            print("You win!")
+            break
+        elif guess > random_number:
+            print("Too high!")
+        else:
+            print("Too low!")
+    print(f"{guess} is a correct guess.")
 
-    elif guess_number < draw_number:
-        print("Too small!")
-        
-    elif guess_number > draw_number:
-        print("Too big!")
 
+if __name__ == "__main__":
+    guess_number()
 
